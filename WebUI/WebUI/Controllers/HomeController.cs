@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,8 @@ namespace WebUI.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Environment = ConfigurationManager.AppSettings["Environment"];
+            ViewBag.Version = ConfigurationManager.AppSettings["ReleaseVersion"];
             return View();
         }
 
